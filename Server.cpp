@@ -76,6 +76,7 @@ int main() {
 			if (op_code == SOCKET_ERROR) {
 				printf("Send failed on client socket %I64u with error %d\n", client_socket, WSAGetLastError());
 				closesocket(client_socket);
+				op_code = -1;
 			}
 		}
 		else if (op_code == 0) {
